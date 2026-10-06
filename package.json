@@ -1,0 +1,12 @@
+{
+"name": "pipelinejob-demo",
+"version": "1.0.0",
+"description": "Simple Node.js application deployed using Jenkins Pipeline",
+"main": "server.js",
+"scripts": {
+"start": "node server.js",
+"build": "mkdir -p dist && cp index.html dist/index.html"
+},
+"author": "Shravani Jadhav",
+"license": "MIT"
+}

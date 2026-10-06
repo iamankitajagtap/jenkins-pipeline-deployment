@@ -1,0 +1,1219 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA | Smart Technology</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b12;
+            color: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(8, 11, 18, 0.88);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid #1c2330;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            height: 72px;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #62e6c5;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aeb7c6;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #62e6c5;
+        }
+
+        .nav-btn {
+            border: 1px solid #62e6c5;
+            color: #62e6c5;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 130px 25px 80px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            right: -150px;
+            top: 100px;
+
+            background: #62e6c5;
+            opacity: 0.08;
+
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+
+            padding: 7px 13px;
+            border: 1px solid #293242;
+            border-radius: 30px;
+
+            color: #62e6c5;
+            font-size: 12px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 72px);
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #62e6c5;
+        }
+
+        .hero-text p {
+            color: #9ca7b8;
+            font-size: 17px;
+            max-width: 570px;
+
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            background: #62e6c5;
+            color: #07100d;
+
+            padding: 13px 23px;
+            border-radius: 6px;
+
+            font-weight: bold;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            border: 1px solid #303949;
+            color: #d5dbe5;
+
+            padding: 13px 23px;
+            border-radius: 6px;
+
+            font-size: 14px;
+        }
+
+        .secondary-btn:hover {
+            border-color: #62e6c5;
+            color: #62e6c5;
+        }
+
+        /* ================= PRODUCT ================= */
+
+        .product-display {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .device {
+            width: 290px;
+            height: 430px;
+
+            border: 9px solid #202733;
+            border-radius: 38px;
+
+            background: linear-gradient(145deg, #131a24, #0c1119);
+
+            box-shadow:
+                0 40px 80px rgba(0,0,0,0.5),
+                inset 0 0 30px rgba(255,255,255,0.03);
+
+            transform: rotate(5deg);
+
+            padding: 18px;
+
+            position: relative;
+        }
+
+        .camera {
+            position: absolute;
+
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 75px;
+            height: 20px;
+
+            background: #05070b;
+            border-radius: 20px;
+        }
+
+        .device-screen {
+            height: 100%;
+
+            border-radius: 25px;
+
+            background:
+                radial-gradient(circle at 30% 20%, #62e6c5 0, transparent 25%),
+                radial-gradient(circle at 80% 70%, #6f7cff 0, transparent 30%),
+                linear-gradient(145deg, #101a28, #080d15);
+
+            padding: 35px 20px;
+        }
+
+        .screen-logo {
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .screen-circle {
+            width: 130px;
+            height: 130px;
+
+            margin: 55px auto 25px;
+
+            border-radius: 50%;
+
+            border: 1px solid #62e6c5;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 30px;
+
+            box-shadow: 0 0 50px rgba(98,230,197,0.18);
+        }
+
+        .screen-text {
+            text-align: center;
+            color: #aeb7c6;
+            font-size: 12px;
+        }
+
+        /* ================= TRUST ================= */
+
+        .trust {
+            border-top: 1px solid #1b222d;
+            border-bottom: 1px solid #1b222d;
+
+            padding: 25px;
+
+            background: #0b0f17;
+        }
+
+        .trust-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            color: #6f7b8c;
+            font-size: 13px;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading small {
+            color: #62e6c5;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            margin-top: 10px;
+        }
+
+        .section-heading p {
+            color: #8e99aa;
+            max-width: 620px;
+            margin: 15px auto;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            background: #0c1119;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature-card {
+            padding: 32px;
+
+            background: #101620;
+
+            border: 1px solid #1c2531;
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: #62e6c5;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 9px;
+
+            background: #132a28;
+            color: #62e6c5;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 21px;
+
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #8994a5;
+            font-size: 14px;
+        }
+
+        /* ================= SPECS ================= */
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .specs-text h2 {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .specs-text p {
+            color: #909aaa;
+            margin-bottom: 25px;
+        }
+
+        .spec-list {
+            list-style: none;
+        }
+
+        .spec-list li {
+            padding: 13px 0;
+
+            border-bottom: 1px solid #1c2430;
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #aeb7c6;
+            font-size: 14px;
+        }
+
+        .spec-list strong {
+            color: white;
+        }
+
+        .performance-card {
+            min-height: 390px;
+
+            border: 1px solid #1d2733;
+            border-radius: 15px;
+
+            background:
+                linear-gradient(145deg, #111925, #090e15);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .performance-number {
+            font-size: 90px;
+            font-weight: 800;
+            color: #62e6c5;
+        }
+
+        .performance-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .performance-card p {
+            color: #7f8a9a;
+            font-size: 14px;
+        }
+
+        /* ================= PRICING ================= */
+
+        .pricing {
+            background: #0c1119;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .price-card {
+            padding: 35px;
+
+            background: #101620;
+
+            border: 1px solid #202a37;
+            border-radius: 12px;
+        }
+
+        .price-card.featured {
+            border-color: #62e6c5;
+        }
+
+        .price-card small {
+            color: #62e6c5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-card h3 {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .price span {
+            color: #758092;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .price-card li {
+            padding: 8px 0;
+            color: #929dad;
+            font-size: 14px;
+        }
+
+        .price-card li::before {
+            content: "✓";
+            color: #62e6c5;
+            margin-right: 10px;
+        }
+
+        .price-btn {
+            display: block;
+            text-align: center;
+
+            border: 1px solid #303a48;
+            padding: 12px;
+
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .featured .price-btn {
+            background: #62e6c5;
+            color: #07100d;
+            border-color: #62e6c5;
+            font-weight: bold;
+        }
+
+        /* ================= TESTIMONIAL ================= */
+
+        .testimonial {
+            text-align: center;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .stars {
+            color: #62e6c5;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial p {
+            font-size: 25px;
+            color: #d5dae2;
+            margin-bottom: 20px;
+        }
+
+        .testimonial span {
+            color: #6f7b8b;
+            font-size: 13px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            padding-top: 40px;
+            padding-bottom: 100px;
+        }
+
+        .cta-box {
+            max-width: 1000px;
+            margin: auto;
+
+            text-align: center;
+
+            padding: 70px 30px;
+
+            border: 1px solid #26313f;
+            border-radius: 15px;
+
+            background:
+                radial-gradient(circle at center, #10251f, #0d131d 55%);
+        }
+
+        .cta-box h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            color: #8f9aaa;
+            max-width: 600px;
+            margin: auto auto 30px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid #1c2430;
+            background: #05070b;
+            padding: 30px 25px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .footer-logo span {
+            color: #62e6c5;
+        }
+
+        footer p {
+            color: #596474;
+            font-size: 12px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container,
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-display {
+                margin-top: 30px;
+            }
+
+            .feature-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 75px 20px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .device {
+                width: 250px;
+                height: 370px;
+            }
+
+            .feature-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2,
+            .specs-text h2 {
+                font-size: 34px;
+            }
+
+            .performance-number {
+                font-size: 70px;
+            }
+
+            .cta-box h2 {
+                font-size: 34px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+                NEXORA<span>+</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#specs">Technology</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+
+            <a href="#buy" class="nav-btn">
+                Pre-Order
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-container">
+
+            <div class="hero-text">
+
+                <div class="tag">
+                    NEW GENERATION TECHNOLOGY
+                </div>
+
+                <h1>
+                    Technology<br>
+                    That Moves<br>
+                    <span>With You.</span>
+                </h1>
+
+                <p>
+                    Meet Nexora One — a next-generation smart device
+                    designed to simplify your day with powerful performance,
+                    intelligent features and an elegant design.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#buy" class="primary-btn">
+                        Buy Now — ₹29,999
+                    </a>
+
+                    <a href="#features" class="secondary-btn">
+                        Explore Features
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT MOCKUP -->
+
+            <div class="product-display">
+
+                <div class="device">
+
+                    <div class="camera"></div>
+
+                    <div class="device-screen">
+
+                        <div class="screen-logo">
+                            NEXORA
+                        </div>
+
+                        <div class="screen-circle">
+                            N
+                        </div>
+
+                        <div class="screen-text">
+                            Everything you need.<br>
+                            One intelligent device.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRUST -->
+
+    <div class="trust">
+
+        <div class="trust-container">
+
+            <div class="trust-item">
+                ⚡ Fast Performance
+            </div>
+
+            <div class="trust-item">
+                🔒 Privacy Focused
+            </div>
+
+            <div class="trust-item">
+                🔋 All-Day Battery
+            </div>
+
+            <div class="trust-item">
+                🌐 Smart Connectivity
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FEATURES -->
+
+    <section class="features" id="features">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <small>Why Nexora</small>
+
+                <h2>Built For Your Everyday</h2>
+
+                <p>
+                    Powerful technology combined with thoughtful design
+                    to make everyday tasks simpler and faster.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>Lightning Fast</h3>
+
+                    <p>
+                        Experience responsive performance with an
+                        advanced processor built for demanding tasks.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ◉
+                    </div>
+
+                    <h3>Smart Assistant</h3>
+
+                    <p>
+                        Intelligent tools help you organize,
+                        communicate and stay productive.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🔋
+                    </div>
+
+                    <h3>Long Battery</h3>
+
+                    <p>
+                        Stay productive throughout the day with
+                        optimized power management.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🔒
+                    </div>
+
+                    <h3>Secure By Design</h3>
+
+                    <p>
+                        Your personal information stays protected
+                        with modern security technology.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ◎
+                    </div>
+
+                    <h3>Crystal Display</h3>
+
+                    <p>
+                        Enjoy vibrant visuals and smooth interactions
+                        on the edge-to-edge display.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ∞
+                    </div>
+
+                    <h3>Always Connected</h3>
+
+                    <p>
+                        Seamlessly connect your devices and stay
+                        synchronized wherever you go.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECHNOLOGY -->
+
+    <section id="specs">
+
+        <div class="container">
+
+            <div class="specs-grid">
+
+                <div class="specs-text">
+
+                    <small style="color:#62e6c5; letter-spacing:2px;">
+                        ENGINEERED DIFFERENTLY
+                    </small>
+
+                    <h2>
+                        Performance You Can Feel.
+                    </h2>
+
+                    <p>
+                        Nexora One combines powerful hardware and
+                        intelligent software to deliver a fast,
+                        reliable and seamless experience.
+                    </p>
+
+
+                    <ul class="spec-list">
+
+                        <li>
+                            Processor
+                            <strong>NX Core X1</strong>
+                        </li>
+
+                        <li>
+                            Display
+                            <strong>6.7" AMOLED</strong>
+                        </li>
+
+                        <li>
+                            Memory
+                            <strong>12 GB RAM</strong>
+                        </li>
+
+                        <li>
+                            Storage
+                            <strong>256 GB</strong>
+                        </li>
+
+                        <li>
+                            Battery
+                            <strong>5200 mAh</strong>
+                        </li>
+
+                        <li>
+                            Connectivity
+                            <strong>5G / Wi-Fi 7</strong>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <div class="performance-number">
+                        98%
+                    </div>
+
+                    <h3>Performance Score</h3>
+
+                    <p>
+                        Designed for speed. Built for everyday performance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRICING -->
+
+    <section class="pricing" id="pricing">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <small>Choose Your Nexora</small>
+
+                <h2>Simple Pricing</h2>
+
+                <p>
+                    Choose the model that fits your lifestyle.
+                </p>
+
+            </div>
+
+
+            <div class="pricing-grid">
+
+                <div class="price-card">
+
+                    <small>Essential</small>
+
+                    <h3>Nexora Lite</h3>
+
+                    <div class="price">
+                        ₹19,999
+                    </div>
+
+                    <ul>
+                        <li>8 GB RAM</li>
+                        <li>128 GB Storage</li>
+                        <li>5000 mAh Battery</li>
+                        <li>5G Connectivity</li>
+                    </ul>
+
+                    <a href="#buy" class="price-btn">
+                        Select Model
+                    </a>
+
+                </div>
+
+
+                <div class="price-card featured">
+
+                    <small>Most Popular</small>
+
+                    <h3>Nexora One</h3>
+
+                    <div class="price">
+                        ₹29,999
+                    </div>
+
+                    <ul>
+                        <li>12 GB RAM</li>
+                        <li>256 GB Storage</li>
+                        <li>5200 mAh Battery</li>
+                        <li>Wi-Fi 7 + 5G</li>
+                    </ul>
+
+                    <a href="#buy" class="price-btn">
+                        Select Model
+                    </a>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <small>Ultimate</small>
+
+                    <h3>Nexora Pro</h3>
+
+                    <div class="price">
+                        ₹39,999
+                    </div>
+
+                    <ul>
+                        <li>16 GB RAM</li>
+                        <li>512 GB Storage</li>
+                        <li>5500 mAh Battery</li>
+                        <li>Advanced AI Features</li>
+                    </ul>
+
+                    <a href="#buy" class="price-btn">
+                        Select Model
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TESTIMONIAL -->
+
+    <section class="testimonial">
+
+        <div class="testimonial-content">
+
+            <div class="stars">
+                ★ ★ ★ ★ ★
+            </div>
+
+            <p>
+                "Nexora feels like the kind of technology
+                that actually understands how I work."
+            </p>
+
+            <span>
+                — Arjun Mehta, Early Access User
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta" id="buy">
+
+        <div class="cta-box">
+
+            <h2>
+                Ready for what's next?
+            </h2>
+
+            <p>
+                Experience the next generation of smart technology
+                with Nexora One.
+            </p>
+
+            <a href="#home" class="primary-btn">
+                Pre-Order Nexora One
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-logo">
+                NEXORA<span>+</span>
+            </div>
+
+            <p>
+                © 2026 Nexora Technologies. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```
